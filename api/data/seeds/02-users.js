@@ -1,6 +1,6 @@
 
 exports.seed = function(knex) {
-      return knex('users').insert([
+      return knex('anywhere_fitness').insert([
         {user_username: 'austin', user_password: "abc123", user_type: 1},
         {user_username: 'Kelly', user_password: "abc123", user_type: 1},
         {user_username: 'Jenna', user_password: "abc123", user_type: 1},
