@@ -10,4 +10,14 @@ const getById = (id) => {
         .first()
 }
 
-module.exports = {getAll, getById}
+const create = async (fitness_class) => {
+    // const [id] = await db('fitness_classes').insert(fitness_class)
+
+    // return getById(id)
+    return await db('fitness_classes').insert(fitness_class, [
+        'fitness_class_name', 'fitness_class_type', 'start_time', 
+        'duration', 'intensity_level', 'location', 
+        'fitness_class_attendees', 'fitness_class_max'])
+}
+
+module.exports = {getAll, getById, create}
