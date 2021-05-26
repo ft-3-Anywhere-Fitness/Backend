@@ -30,4 +30,13 @@ router.post('/', validatePayload, async (req, res, next) => {
     }
 })
 
+router.put('/:id', validateId, validatePayload, async (req, res, next) => {
+    try {
+        const updatedClass = await Fitness.update(req.params.id, req.body)
+        res.json(updatedClass)
+    } catch(err) {
+        next(err)
+    }
+})
+
 module.exports = router 
