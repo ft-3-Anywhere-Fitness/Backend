@@ -5,7 +5,6 @@ exports.up = async (knex) => {
       users.timestamps('created_at')
       users.string('user_username', 200).notNullable()
       users.string('user_password', 200).notNullable()
-      users.string('user_email', 320).notNullable()
       users.string('user_auth', 200)
       users.integer('user_type').defaultTo(1)
     })
