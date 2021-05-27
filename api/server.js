@@ -2,14 +2,16 @@ const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
 const fitnessRouter = require('./fitnessRouter/router')
+const authRouter = require('./authRouter/router')
 
 const server = express()
 server.use(express.json())
 server.use(helmet())
 server.use(cors())
 
-// API ENDPOINT
+// ROUTER ENDPOINTS
 server.use('/api/classes', fitnessRouter)
+server.use('/api/auth', authRouter)
 
 // sanity check
 server.get('/', (req, res) => {
