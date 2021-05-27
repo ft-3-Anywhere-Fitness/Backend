@@ -3,8 +3,8 @@
 
 ## /api/classes
 
-| REST method   | endpoint          | description               |
-| ------------  | ----------------- | ------------------------- |
+| REST method   | endpoint          | description                |
+| ------------  | ----------------- | -------------------------  |
 |   GET         |  /api/classes         view all classes         |
 |   GET         |  /api/classes/:id     view class by id         |
 |   POST        |  /api/classes         create new class         |
