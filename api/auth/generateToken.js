@@ -4,7 +4,7 @@ const {JWT_SECRET} = require('../config')
 function tokenGenerator(user)  {
     const payload = {
         sub: user.user_id,
-        username: user.user_username
+        username: user.username
     }
 
     const options = {

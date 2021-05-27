@@ -2,7 +2,7 @@ const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
 const fitnessRouter = require('./fitnessRouter/router')
-const authRouter = require('./authRouter/router')
+const authRouter = require('./auth/auth-router')
 
 const server = express()
 server.use(express.json())
