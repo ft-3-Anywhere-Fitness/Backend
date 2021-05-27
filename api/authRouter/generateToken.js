@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const {JWT_SECRET} = require('../config')
 
 function tokenGenerator(user)  {
     const payload = {
@@ -9,4 +10,10 @@ function tokenGenerator(user)  {
     const options = {
         expiresIn: '1d'
     }
+
+    const token = jwt.sign(payload, JWT_SECRET, options)
+
+    return token
 }
+
+module.exports = tokenGenerator
