@@ -39,4 +39,13 @@ router.put('/:id', validateId, validatePayload, async (req, res, next) => {
     }
 })
 
+router.delete('/:id', validateId, async (req, res, next) => {
+    try {
+        const removeClass = await Fitness.remove(req.params.id)
+        res.json(removeClass)
+    } catch(err) {
+        next(err)
+    }
+})
+
 module.exports = router 

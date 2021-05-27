@@ -28,4 +28,11 @@ const update = async (id, fitness_class) => {
         'fitness_class_attendees', 'fitness_class_max'])
 }
 
-module.exports = {getAll, getById, create, update}
+const remove = async(id) => {
+    const deleteClass = await getById(id)
+    await db('fitness_classes').where('fitness_class_id', id).del()
+
+    return deleteClass
+}
+
+module.exports = {getAll, getById, create, update, remove}
